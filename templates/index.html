@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="module" src="../static/script.js"></script>
+        <script type="module" src="../static/planets.js"></script>
+        <link rel="stylesheet" href="../static/styles.css">
+        <title>Projectile Motion Simulator</title>
+    </head>
+    <body>
+        <div id="layout">
+            <div id="canvasContainer">
+                <canvas id="canvas" width="1050" height="650"></canvas>
+            </div>
+
+            <div id="interface">
+                <form name="projectileSettings" id="projectileForm">
+                    Projectile Settings
+                    <div class="inputBox">
+                        Velocity (m/s):
+                        <input name="velocity" type="range" min="0" max="40" value="10" oninput="this.nextElementSibling.value = this.value" class="inputParameters">
+                        <output>10</output>
+                    </div>
+
+                    <div class="inputBox">
+                        Angle (degrees):
+                        <input name="angle" type="range" min="0" max="90" value="45" oninput="this.nextElementSibling.value = this.value" class="inputParameters">
+                        <output>45</output>
+                    </div>
+                        
+                    <div class="inputBox">
+                        Height (m):
+                        <input name="height" type="range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value" class="inputParameters">
+                        <output>0</output>
+                    </div>
+
+                    <div class="inputBox" >
+                        Planet
+                        <select name="planets" class="inputParameters">
+                            <option value="Earth">Earth</option>
+                            <option value="Moon">Moon</option>
+                            <option value="Mercury">Mercury</option>
+                            <option value="Venus">Venus</option>
+                            <option value="Mars">Mars</option>
+                            <option value="Jupiter">Jupiter</option>
+                            <option value="Saturn">Saturn</option>
+                            <option value="Neptune">Neptune</option>
+                            <option value="Uranus">Uranus</option>
+                        </select>
+                    </div>
+
+                    <div class="inputBox">
+                        Resolution
+                        <select name="stepSize" class="inputParameters">
+                            <option value="0.1">0.1</option>
+                            <option value="0.2">0.2</option>
+                            <option value="0.5">0.5</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+
+                    <div class="inputBox" >
+                        <button id="submit" class="inputParameters">fire</button>
+                    </div>
+                    
+                </form>
+                <div id="simulationInterface">
+                    Projectile Data
+
+                    <div class="inputBox">
+                        timer (s):
+                        <span id="simTimer">0</span> 
+                    </div>
+
+                    <div class="inputBox">
+                        distance (m):
+                        <span id="simDistance">0<span> 
+                    </div>
+
+                    <div class="inputBox">
+                        height (m):
+                        <span id="simHeight">0</span>
+                    </div>
+
+                    <div class="inputBox">
+                        Gravity (m/s^2):
+                        <span id="simGravity">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body> 
+</html>
