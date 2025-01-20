@@ -138,9 +138,6 @@ function resetCanvas(planetBackground)
 // the function for drawing the cannon
 function drawCannon(elevation, angle) 
 {
-    // canvas variable
-    const canvas = document.getElementById('canvas')
-    const context = canvas.getContext('2d')
 
     const cannon = new Image()
     const y = 600 - elevation*scale
