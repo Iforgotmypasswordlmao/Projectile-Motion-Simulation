@@ -2,6 +2,10 @@ import { planetData } from './planets.js'
 
 const scale = 5 // 5 pixels = 1 meter
 
+// stores the canvas to draw the points on
+const canvas = document.getElementById('canvas')
+const context = canvas.getContext('2d')
+
 // simulates the projectiles motion on the canvas
 async function simulateProjectileMotion(projectileData)
 {
@@ -20,10 +24,6 @@ async function simulateProjectileMotion(projectileData)
     // stores the results 
     const results = await response.json()   
     const timeInterval = projectileData['stepSize']
-
-    // stores the canvas to draw the points on
-    const canvas = document.getElementById('canvas')
-    const context = canvas.getContext('2d')
 
     // function for turning on and off the form
     const switchForm = (bool) => {
@@ -120,9 +120,6 @@ function onSubmit()
 // for reseting the canvas
 function resetCanvas(planetBackground)
 {
-    // canvas variables
-    const canvas = document.getElementById('canvas')
-    const context = canvas.getContext('2d')
 
     // clears the canvas of drawings
     context.clearRect(0, 0, canvas.width, canvas.height)
